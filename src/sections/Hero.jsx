@@ -37,7 +37,7 @@ function Hero() {
               width={300}
               height={300}
               whileHover={{ scale: 1.05 }}
-              transition={{ type: "spring", stiffness: 400, damping: 15 }}
+              transition={{ type: "spring", stiffness: 150}}
               className="mt-2 sm:mt-12"
               src={avatar2}
               alt="avatar2"
@@ -48,8 +48,8 @@ function Hero() {
               height={300}
               onClick={() => setIsClicked(true)}
               whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.9 }}
-              transition={{ type: "spring", stiffness: 400, damping: 15 }}
+              whileTap={{ scale: 0.98 }}
+              transition={{ type: "spring", stiffness: 150}}
               className="mt-2 sm:mt-12"
               src={avatar}
               alt="avatar"
