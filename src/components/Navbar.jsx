@@ -1,25 +1,58 @@
-import { useMemo, useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import Button from "./Button";
 import { motion } from "framer-motion";
 import { IoMenu, IoClose } from "react-icons/io5";
+import ExitAnimation from "./ExitAnimation";
 
-const hover = {
+const style = {
   hover: "hover:text-primary transition-all cursor-pointer",
+  mobileListElements: "bg-background w-full py-4 text-center font-mono text-xl",
 };
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const ref = useRef();
+
+  useEffect(() => {
+    const handleOutClick = (e) => {
+      if (!ref.current.contains(e.target)) setIsOpen(false);
+    };
+    document.addEventListener("mousedown", handleOutClick);
+  });
+
+  useEffect(() => {
+    const handleWindowResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleWindowResize);
+
+    return () => {
+      window.removeEventListener("resize", handleWindowResize);
+    };
+  });
+
+  useEffect(() => {
+    if (windowWidth >= 640) {
+      setIsOpen(false);
+    }
+  }, [windowWidth]);
 
   return (
-    <div className="fixed mx-auto bg-background w-full">
-      <nav className="flex mx-auto items-center h-20 max-w-7xl w-full justify-between font-mono px-4 xs:px-6 sm:px-8">
-        <h2 className="text-3xl md:text-4xl font-semibold">
+    <div ref={ref} className="fixed z-50 mx-auto bg-background w-full">
+      <nav className="flex mx-auto items-center h-16 sm:h-18 md:h-20 max-w-7xl w-full justify-between font-mono px-4 xs:px-6 sm:px-8">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold">
           Portfolio<span className="text-primary">.</span>
         </h2>
         <ul className="md:flex gap-8 hidden">
-          <li className={hover.hover}><a href="#home">Home</a></li>
-          <li className={hover.hover}><a href="#about">About</a></li>
-          <li className={hover.hover}>Portfolio</li>
+          <li className={style.hover}>
+            <a href="#home">Home</a>
+          </li>
+          <li className={style.hover}>
+            <a href="#about">About</a>
+          </li>
+          <li className={style.hover}>Portfolio</li>
         </ul>
         <div className="hidden md:block">
           <Button text="Contact" />
@@ -31,14 +64,68 @@ function Navbar() {
           {isOpen ? <IoClose /> : <IoMenu />}
         </div>
       </nav>
-      {isOpen && (
-        <ul className="absolute flex flex-col items-center w-full">
-          <li>Home</li>
-          <li>About</li>
-          <li>Portfolio</li>
-          <li>Contact</li>
-        </ul>
-      )}
+      <ExitAnimation>
+        {isOpen && (
+          <ul className="absolute flex flex-col items-center w-full">
+            <motion.li
+              initial={{ x: "100%" }}
+              animate={{
+                x: 0,
+                transition: { ease: "linear", duration: 0.1, delay: 0 },
+              }}
+              exit={{
+                x: "100%",
+                transition: { ease: "linear", duration: 0.2, delay: 0.15 },
+              }}
+              className={style.mobileListElements}
+            >
+              Home
+            </motion.li>
+            <motion.li
+              initial={{ x: "100%" }}
+              animate={{
+                x: 0,
+                transition: { ease: "linear", duration: 0.2, delay: 0.05 },
+              }}
+              exit={{
+                x: "100%",
+                transition: { ease: "linear", duration: 0.2, delay: 0.1 },
+              }}
+              className={style.mobileListElements}
+            >
+              About
+            </motion.li>
+            <motion.li
+              initial={{ x: "100%" }}
+              animate={{
+                x: 0,
+                transition: { ease: "linear", duration: 0.2, delay: 0.1 },
+              }}
+              exit={{
+                x: "100%",
+                transition: { ease: "linear", duration: 0.2, delay: 0.05 },
+              }}
+              className={style.mobileListElements}
+            >
+              Portfolio
+            </motion.li>
+            <motion.li
+              initial={{ x: "100%" }}
+              animate={{
+                x: 0,
+                transition: { ease: "linear", duration: 0.2, delay: 0.15 },
+              }}
+              exit={{
+                x: "100%",
+                transition: { ease: "linear", duration: 0.2, delay: 0 },
+              }}
+              className={style.mobileListElements}
+            >
+              Contact
+            </motion.li>
+          </ul>
+        )}
+      </ExitAnimation>
     </div>
   );
 }
