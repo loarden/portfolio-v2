@@ -4,6 +4,7 @@ import { IoLocationSharp } from "react-icons/io5";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import ExitAnimation from "../components/ExitAnimation";
+import Arrow from "../components/Arrow";
 
 function Hero() {
   const [isClicked, setIsClicked] = useState(false);
@@ -17,7 +18,7 @@ function Hero() {
   return (
     <section
       id="home"
-      className="w-full h-screen flex justify-center items-center text-center"
+      className="relative w-full h-screen flex justify-center items-center text-center"
     >
       <div className="max-w-5xl flex flex-col items-center px-4">
         <h1 className="text-4xl md:text-5xl font-mono font-semibold">
@@ -34,8 +35,8 @@ function Hero() {
         <ExitAnimation>
           {isClicked ? (
             <motion.img
-              width={300}
-              height={300}
+              width={280}
+              height={280}
               whileHover={{ scale: 1.05 }}
               transition={{ type: "spring", stiffness: 150}}
               className="mt-2 sm:mt-12"
@@ -44,8 +45,8 @@ function Hero() {
             />
           ) : (
             <motion.img
-              width={300}
-              height={300}
+              width={280}
+              height={280}
               onClick={() => setIsClicked(true)}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.98 }}
@@ -57,6 +58,7 @@ function Hero() {
           )}
         </ExitAnimation>
       </div>
+      <Arrow />
     </section>
   );
 }

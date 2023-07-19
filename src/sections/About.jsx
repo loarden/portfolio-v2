@@ -5,9 +5,9 @@ function About() {
   return (
     <section
       id="about"
-      className=" bg-primary h-fit pt-24 sm:pt-32 md:pt-40 pb-72 text-background w-full"
+      className=" bg-primary h-fit pt-24 sm:pt-32 md:pt-40 pb-48 sm:pb-60 md:pb-72 text-background w-full"
     >
-      <div className="max-w-7xl mx-auto w-full flex flex-col items-center px-8">
+      <div className="max-w-7xl mx-auto w-full flex flex-col items-center px-4 md:px-8">
         <h2 className="text-center font-mono text-4xl">Hello, I'm Ors Biacsi</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-10 md:gap-24 mt-12 sm:mt-14 md:mt-16">
           <div className="self-center">

@@ -45,12 +45,15 @@ function Navbar() {
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold">
           Portfolio<span className="text-primary">.</span>
         </h2>
-        <ul className="md:flex gap-8 hidden">
+        <ul className="md:flex gap-8 hidden text-[1.25rem]">
           <li className={style.hover}>
             <a href="#home">Home</a>
           </li>
           <li className={style.hover}>
             <a href="#about">About</a>
+          </li>
+          <li className={style.hover}>
+            <a href="#skills">Skills</a>
           </li>
           <li className={style.hover}>Portfolio</li>
         </ul>
@@ -67,21 +70,23 @@ function Navbar() {
       <ExitAnimation>
         {isOpen && (
           <ul className="absolute flex flex-col items-center w-full">
-            <motion.li
+            <motion.a
+              href="#home"
               initial={{ x: "100%" }}
               animate={{
                 x: 0,
-                transition: { ease: "linear", duration: 0.1, delay: 0 },
+                transition: { ease: "linear", duration: 0.2, delay: 0 },
               }}
               exit={{
                 x: "100%",
-                transition: { ease: "linear", duration: 0.2, delay: 0.15 },
+                transition: { ease: "linear", duration: 0.2, delay: 0.2 },
               }}
               className={style.mobileListElements}
             >
               Home
-            </motion.li>
-            <motion.li
+            </motion.a>
+            <motion.a
+              href="#about"
               initial={{ x: "100%" }}
               animate={{
                 x: 0,
@@ -89,17 +94,32 @@ function Navbar() {
               }}
               exit={{
                 x: "100%",
-                transition: { ease: "linear", duration: 0.2, delay: 0.1 },
+                transition: { ease: "linear", duration: 0.2, delay: 0.15 },
               }}
               className={style.mobileListElements}
             >
               About
-            </motion.li>
-            <motion.li
+            </motion.a>
+            <motion.a
+              href="#skills"
               initial={{ x: "100%" }}
               animate={{
                 x: 0,
                 transition: { ease: "linear", duration: 0.2, delay: 0.1 },
+              }}
+              exit={{
+                x: "100%",
+                transition: { ease: "linear", duration: 0.2, delay: 0.1 },
+              }}
+              className={style.mobileListElements}
+            >
+              Skills
+            </motion.a>
+            <motion.a
+              initial={{ x: "100%" }}
+              animate={{
+                x: 0,
+                transition: { ease: "linear", duration: 0.2, delay: 0.15 },
               }}
               exit={{
                 x: "100%",
@@ -108,12 +128,12 @@ function Navbar() {
               className={style.mobileListElements}
             >
               Portfolio
-            </motion.li>
-            <motion.li
+            </motion.a>
+            <motion.a
               initial={{ x: "100%" }}
               animate={{
                 x: 0,
-                transition: { ease: "linear", duration: 0.2, delay: 0.15 },
+                transition: { ease: "linear", duration: 0.2, delay: 0.2 },
               }}
               exit={{
                 x: "100%",
@@ -122,7 +142,7 @@ function Navbar() {
               className={style.mobileListElements}
             >
               Contact
-            </motion.li>
+            </motion.a>
           </ul>
         )}
       </ExitAnimation>
