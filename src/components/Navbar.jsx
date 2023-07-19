@@ -42,20 +42,19 @@ function Navbar() {
   return (
     <div ref={ref} className="fixed z-50 mx-auto bg-background w-full">
       <nav className="flex mx-auto items-center h-16 sm:h-18 md:h-20 max-w-7xl w-full justify-between font-mono px-4 xs:px-6 sm:px-8">
-        <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold">
-          Portfolio<span className="text-primary">.</span>
-        </h2>
-        <ul className="md:flex gap-8 hidden text-[1.25rem]">
-          <li className={style.hover}>
-            <a href="#home">Home</a>
-          </li>
+        <a href="#home">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold">
+            Portfolio<span className="text-primary">.</span>
+          </h2>
+        </a>
+        <ul className="md:flex gap-8 hidden">
           <li className={style.hover}>
             <a href="#about">About</a>
           </li>
           <li className={style.hover}>
             <a href="#skills">Skills</a>
           </li>
-          <li className={style.hover}>Portfolio</li>
+          <li className={style.hover}><a href="#portfolio">Portfolio</a></li>
         </ul>
         <div className="hidden md:block">
           <Button text="Contact" />
