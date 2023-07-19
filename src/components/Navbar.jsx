@@ -115,6 +115,7 @@ function Navbar() {
               Skills
             </motion.a>
             <motion.a
+            href="#portfolio"
               initial={{ x: "100%" }}
               animate={{
                 x: 0,
