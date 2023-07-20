@@ -1,5 +1,4 @@
 import SectionTitle from "../components/SectionTitle";
-import Skills from "../components/Skills";
 import illustration from "../img/Freelance-Developer.png";
 
 function About() {

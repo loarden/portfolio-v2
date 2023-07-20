@@ -1,8 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import Button from "./Button";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { IoMenu, IoClose } from "react-icons/io5";
-import ExitAnimation from "./ExitAnimation";
 
 const style = {
   hover: "hover:text-primary transition-all cursor-pointer",
@@ -12,7 +11,12 @@ const style = {
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const [y, setY] = useState(window.pageYOffset)
   const ref = useRef();
+
+  useEffect(() => {
+    console.log(y)
+  },[y])
 
   useEffect(() => {
     const handleOutClick = (e) => {
@@ -39,11 +43,15 @@ function Navbar() {
     }
   }, [windowWidth]);
 
+  const handleClick = () => {
+    setIsOpen(false)
+  }
+
   return (
     <div ref={ref} className="fixed z-50 mx-auto bg-background w-full">
       <nav className="flex mx-auto items-center h-16 sm:h-18 md:h-20 max-w-7xl w-full justify-between font-mono px-4 xs:px-6 sm:px-8">
         <a href="#home">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold">
+          <h2 onClick={handleClick} className="text-2xl sm:text-3xl md:text-4xl font-semibold">
             Portfolio<span className="text-primary">.</span>
           </h2>
         </a>
@@ -57,7 +65,7 @@ function Navbar() {
           <li className={style.hover}><a href="#portfolio">Portfolio</a></li>
         </ul>
         <div className="hidden md:block">
-          <Button text="Contact" />
+          <Button link='#contact' text="Contact" />
         </div>
         <div
           className="text-4xl text-primary block md:hidden"
@@ -66,11 +74,11 @@ function Navbar() {
           {isOpen ? <IoClose /> : <IoMenu />}
         </div>
       </nav>
-      <ExitAnimation>
+      <AnimatePresence>
         {isOpen && (
-          <ul className="absolute flex flex-col items-center w-full">
+          <div className="absolute flex flex-col items-center w-full">
             <motion.a
-              href="#home"
+              href="#about"
               initial={{ x: "100%" }}
               animate={{
                 x: 0,
@@ -78,23 +86,9 @@ function Navbar() {
               }}
               exit={{
                 x: "100%",
-                transition: { ease: "linear", duration: 0.2, delay: 0.2 },
-              }}
-              className={style.mobileListElements}
-            >
-              Home
-            </motion.a>
-            <motion.a
-              href="#about"
-              initial={{ x: "100%" }}
-              animate={{
-                x: 0,
-                transition: { ease: "linear", duration: 0.2, delay: 0.05 },
-              }}
-              exit={{
-                x: "100%",
                 transition: { ease: "linear", duration: 0.2, delay: 0.15 },
               }}
+              onClick={handleClick}
               className={style.mobileListElements}
             >
               About
@@ -104,12 +98,13 @@ function Navbar() {
               initial={{ x: "100%" }}
               animate={{
                 x: 0,
-                transition: { ease: "linear", duration: 0.2, delay: 0.1 },
+                transition: { ease: "linear", duration: 0.2, delay: 0.05 },
               }}
               exit={{
                 x: "100%",
                 transition: { ease: "linear", duration: 0.2, delay: 0.1 },
               }}
+              onClick={handleClick}
               className={style.mobileListElements}
             >
               Skills
@@ -119,33 +114,36 @@ function Navbar() {
               initial={{ x: "100%" }}
               animate={{
                 x: 0,
-                transition: { ease: "linear", duration: 0.2, delay: 0.15 },
+                transition: { ease: "linear", duration: 0.2, delay: 0.1 },
               }}
               exit={{
                 x: "100%",
                 transition: { ease: "linear", duration: 0.2, delay: 0.05 },
               }}
+              onClick={handleClick}
               className={style.mobileListElements}
             >
               Portfolio
             </motion.a>
             <motion.a
+            href="#contact"
               initial={{ x: "100%" }}
               animate={{
                 x: 0,
-                transition: { ease: "linear", duration: 0.2, delay: 0.2 },
+                transition: { ease: "linear", duration: 0.2, delay: 0.15 },
               }}
               exit={{
                 x: "100%",
                 transition: { ease: "linear", duration: 0.2, delay: 0 },
               }}
+              onClick={handleClick}
               className={style.mobileListElements}
             >
               Contact
             </motion.a>
-          </ul>
+          </div>
         )}
-      </ExitAnimation>
+      </AnimatePresence>
     </div>
   );
 }

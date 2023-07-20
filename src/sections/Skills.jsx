@@ -93,8 +93,8 @@ const skillsDetails = [
 
 function Skills() {
   return (
-    <section id="skills" className="bg-background w-full px-4">
-      <div className="relative -top-24 grid grid-cols-1 sm:grid-cols-3 gap-10 justify-items-center max-w-7xl w-full mx-auto bg-background rounded-3xl p-10 shadow-md text-center">
+    <section className="bg-background w-full px-4">
+      <div id="skills" className="relative -top-24 grid grid-cols-1 sm:grid-cols-3 gap-10 justify-items-center max-w-7xl w-full mx-auto bg-background rounded-3xl p-10 shadow-md text-center">
         {skillsDetails.map((item) => {
           return (
             <SkillsDetails key={item.id} title={item.title} items={item.stack}>
