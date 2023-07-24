@@ -18,8 +18,9 @@ const footerIcons = [
 
 function Footer() {
   return (
-    <footer className="w-full bg-primary h-80 flex flex-col justify-center items-center text-background">
-      <div className="text-2xl flex gap-8">
+    <footer className="w-full bg-primary h-80 flex flex-col justify-center items-center text-background px-4">
+      <h3>Create something incredible.</h3>
+      <div className="text-2xl flex gap-8 my-10">
         {
           footerIcons.map((item, index) => {
             return (
@@ -30,7 +31,7 @@ function Footer() {
           })
         }
       </div>
-      <p className="mt-10">© 2023 Biacsi Ors</p>
+      <p>© 2023 Biacsi Ors</p>
     </footer>
   )
 }

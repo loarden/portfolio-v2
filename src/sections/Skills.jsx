@@ -60,6 +60,10 @@ const skillsDetails = [
         id: 3,
         title: "Firebase",
       },
+      {
+        id: 4,
+        title: "MySQL",
+      },
     ],
   },
   {
