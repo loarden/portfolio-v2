@@ -3,7 +3,7 @@ import Hero from "./sections/Hero";
 import Footer from "./components/Footer";
 import About from "./sections/About"
 import Skills from "./sections/Skills";
-import Portfolio from "./sections/Portfolio";
+import Projects from "./sections/Projects";
 import Contact from "./sections/Contact";
 
 function App() {
@@ -13,7 +13,7 @@ function App() {
       <Hero />
       <About />
       <Skills />
-      <Portfolio />
+      <Projects />
       <Contact />
       <Footer />
     </main>

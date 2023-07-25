@@ -11,12 +11,7 @@ const style = {
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-  const [y, setY] = useState(window.pageYOffset)
   const ref = useRef();
-
-  useEffect(() => {
-    console.log(y)
-  },[y])
 
   useEffect(() => {
     const handleOutClick = (e) => {
@@ -44,14 +39,17 @@ function Navbar() {
   }, [windowWidth]);
 
   const handleClick = () => {
-    setIsOpen(false)
-  }
+    setIsOpen(false);
+  };
 
   return (
     <div ref={ref} className="fixed z-50 mx-auto bg-background w-full">
       <nav className="flex mx-auto items-center h-16 sm:h-18 md:h-20 max-w-7xl w-full justify-between font-mono px-4 xs:px-6 sm:px-8">
         <a href="#home">
-          <h2 onClick={handleClick} className="text-2xl sm:text-3xl md:text-4xl font-semibold">
+          <h2
+            onClick={handleClick}
+            className="text-2xl sm:text-3xl md:text-4xl font-semibold"
+          >
             Portfolio<span className="text-primary">.</span>
           </h2>
         </a>
@@ -62,10 +60,12 @@ function Navbar() {
           <li className={style.hover}>
             <a href="#skills">Skills</a>
           </li>
-          <li className={style.hover}><a href="#portfolio">Portfolio</a></li>
+          <li className={style.hover}>
+            <a href="#projects">Projects</a>
+          </li>
         </ul>
         <div className="hidden md:block">
-          <Button link='#contact' text="Contact" />
+          <Button link="#contact" text="Contact" />
         </div>
         <div
           className="text-4xl text-primary block md:hidden"
@@ -110,7 +110,7 @@ function Navbar() {
               Skills
             </motion.a>
             <motion.a
-            href="#portfolio"
+              href="#projects"
               initial={{ x: "100%" }}
               animate={{
                 x: 0,
@@ -123,10 +123,10 @@ function Navbar() {
               onClick={handleClick}
               className={style.mobileListElements}
             >
-              Portfolio
+              Projects
             </motion.a>
             <motion.a
-            href="#contact"
+              href="#contact"
               initial={{ x: "100%" }}
               animate={{
                 x: 0,

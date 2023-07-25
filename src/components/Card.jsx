@@ -28,7 +28,7 @@ function Card({ img, title, url, code, desc, stack }) {
                 transition: { duration: 0.4, ease: "easeInOut" },
               }}
               exit={{ opacity: 0 }}
-              className="w-full h-full flex flex-col items-center text-center p-4 bg-text"
+              className="w-full h-full flex flex-col items-center text-center p-4 sm:p-6 bg-text"
             >
               <div className="flex flex-col w-full h-full justify-center items-center text-background">
                 <p>{desc}</p>

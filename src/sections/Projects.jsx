@@ -84,9 +84,12 @@ const projects = [
 
 function Portfolio() {
   return (
-    <section id="portfolio" className="w-full bg-background pt-6 sm:pt-14 md:pt-20">
+    <section
+      id="projects"
+      className="w-full bg-background pt-6 sm:pt-14 md:pt-20"
+    >
       <div className="w-full max-w-7xl mx-auto text-center px-4">
-        <SectionTitle title="Portfolio" />
+        <SectionTitle title="Projects" />
         <p className="mt-6">Here are some of my projects I've worked on.</p>
         <div className="grid grid-cols-1 my-14 md:my-24 sm:grid-cols-2 lg:grid-cols-3 justify-items-center gap-10">
           {projects.map((item) => {

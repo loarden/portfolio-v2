@@ -8,7 +8,7 @@ function Arrow() {
         href="#about"
         whileHover={{ y: 5 }}
         transition={{ type: "spring", stiffness: 400 }}
-        whileTap={{ scale: 0.90 }}
+        whileTap={{ scale: 0.9 }}
       >
         <RiArrowDownDoubleLine />
       </motion.a>

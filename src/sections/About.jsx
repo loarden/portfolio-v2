@@ -11,10 +11,11 @@ function About() {
         <SectionTitle title="Hello, I'm Biacsi Ors." />
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-10 md:gap-24 mt-12 sm:mt-14 md:mt-16">
           <div className="self-center">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto
-            voluptatem ducimus at molestias aliquam possimus distinctio? Quis,
-            ullam, totam non atque ut suscipit, ex quibusdam quaerat dolore
-            repellendus recusandae vel.
+            I'm a Front-End Developer from Budapest, Hungary. I have serious
+            passion for UI effects, animations and creating intuitive, dynamic
+            user experiences. I love to learn new technologies and improve my 
+            current skills. <br/>
+            Let's make something special together!
           </div>
           <div>
             <img src={illustration} alt="" />
