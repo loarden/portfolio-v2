@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/portfolio-v2/static/css/main.82d878ca.css",
+    "main.js": "/portfolio-v2/static/js/main.91c9b42f.js",
+    "static/js/787.d9a20797.chunk.js": "/portfolio-v2/static/js/787.d9a20797.chunk.js",
+    "static/media/delish-delivery.png": "/portfolio-v2/static/media/delish-delivery.c608f5ff9eaa0347dd78.png",
+    "static/media/weather-app.png": "/portfolio-v2/static/media/weather-app.52c159b3f7ef1dcf3a7c.png",
+    "static/media/Freelance-Developer.png": "/portfolio-v2/static/media/Freelance-Developer.a17ab28bbb829c69adf2.png",
+    "static/media/avatar2.png": "/portfolio-v2/static/media/avatar2.1fbdd66821b8bd986fd8.png",
+    "static/media/avatar.png": "/portfolio-v2/static/media/avatar.9a144212523e617b5266.png",
+    "static/media/todoapp.png": "/portfolio-v2/static/media/todoapp.6a50bb5e1ce53d30f892.png",
+    "index.html": "/portfolio-v2/index.html",
+    "main.82d878ca.css.map": "/portfolio-v2/static/css/main.82d878ca.css.map",
+    "main.91c9b42f.js.map": "/portfolio-v2/static/js/main.91c9b42f.js.map",
+    "787.d9a20797.chunk.js.map": "/portfolio-v2/static/js/787.d9a20797.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.82d878ca.css",
+    "static/js/main.91c9b42f.js"
+  ]
+}
