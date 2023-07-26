@@ -22,7 +22,7 @@ function Hero() {
     >
       <div className="max-w-5xl self-end flex flex-col items-center px-4">
         <h1 className="text-4xl md:text-5xl mt-10 font-mono font-semibold">
-          Biacsi Ors, Frontend Developer
+          Örs Biacsi, Frontend Developer
         </h1>
         <div className="mt-5">
           <p className="inline-block">
